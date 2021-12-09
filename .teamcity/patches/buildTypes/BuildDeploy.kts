@@ -42,5 +42,13 @@ changeBuildType(RelativeId("BuildDeploy")) {
             }
             goals = "mvn clean test"
         }
+        update<MavenBuildStep>(1) {
+            clearConditions()
+
+            conditions {
+                contains("teamcity.build.branch", "marster")
+            }
+            goals = "mvn clean package deploy"
+        }
     }
 }
