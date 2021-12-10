@@ -34,14 +34,6 @@ changeBuildType(RelativeId("BuildDeploy")) {
         }
     }
     steps {
-        update<MavenBuildStep>(0) {
-            clearConditions()
-
-            conditions {
-                doesNotContain("teamcity.build.branch", "master")
-            }
-            goals = "clean"
-        }
         update<MavenBuildStep>(1) {
             clearConditions()
 
