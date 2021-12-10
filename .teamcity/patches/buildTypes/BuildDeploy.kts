@@ -40,7 +40,7 @@ changeBuildType(RelativeId("BuildDeploy")) {
             conditions {
                 doesNotContain("teamcity.build.branch", "master")
             }
-            goals = "mvn clean test"
+            goals = "clean"
         }
         update<MavenBuildStep>(1) {
             clearConditions()
