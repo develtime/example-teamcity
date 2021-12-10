@@ -40,7 +40,7 @@ changeBuildType(RelativeId("BuildDeploy")) {
             conditions {
                 contains("teamcity.build.branch", "master")
             }
-            goals = "mvn clean package deploy"
+            goals = "clean package deploy"
         }
     }
 }
